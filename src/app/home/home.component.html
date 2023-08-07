@@ -1,0 +1,46 @@
+<!-- home.component.html -->
+<header>
+    <h2 class="">my contacts</h2>
+    <nav>
+      <ul>
+        <li routerLink="contacts">contacts</li>
+        <li routerLink="search">search</li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <div class="wrap">
+      <div class="left">
+        <label for="name">name:</label>
+        <input type="text" placeholder="name" id="name" [(ngModel)]="name">
+      </div>
+      <div class="right">
+        <label for="phoneNumber">phone number:</label>
+        <input type="text" placeholder="phone number" [(ngModel)]="phoneNumber">
+      </div>
+      <button *ngIf="!editingContact" type="button" (click)="addContact()">Add Contact</button>
+      <button *ngIf="editingContact" type="button" (click)="updateContact()">Update Contact</button>
+    </div>
+  </section>
+  
+  
+  <section>
+    <div class="search">
+      <input type="text" placeholder="Search by name" [(ngModel)]="searchTerm">
+    </div>
+  </section>
+  
+  <ul *ngFor="let contact of filteredContacts" >
+    <li>
+      <span>Name: {{ contact.name }}</span>
+    </li>
+    <li>
+      <span>Number: {{ contact.phone }}</span>
+    </li>
+    <li>
+      <button (click)="editContact(contact)">Edit</button>
+      <button (click)="deleteContact(contact)">Delete</button>
+    </li>
+  </ul>
+  
+  
