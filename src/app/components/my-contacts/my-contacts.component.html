@@ -1,0 +1,8 @@
+  <div *ngFor="let contact of theContacts">
+    <span class="span">{{contact.id}}.</span>
+    <span class="span">name: {{contact.name}}</span>
+    <span class="span">number: {{contact.phoneNumber}}</span>
+    <button (click)="editContact(contact)">Edit</button>
+    <button (click)="deleteContact(contact)">Delete</button>
+  </div>
+  

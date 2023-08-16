@@ -1,1 +1,28 @@
-<router-outlet></router-outlet>
+<header>
+  <h1>{{ title }}</h1>
+</header>
+<div class="wrap">
+  <div class="left">
+    <label for="name">name : </label>
+    <input type="text" id="name" [(ngModel)]="name" placeholder=""/>
+  </div>
+  <div class="right">
+    <label for="PhoneNumber"> phone number : </label>
+    <input
+      type="text"
+      id="PhoneNumber"
+      [(ngModel)]="phoneNumber"
+      placeholder="more than 10 digits"
+    />
+    <button type="submit" (click)="addContact()">add Contacts</button>
+  </div>
+
+  <section>
+    <div class="search">
+      <input type="text" placeholder="Search by name" [(ngModel)]="searchFor">
+    </div>
+    <app-my-contacts [theContacts]="contacts"></app-my-contacts>
+    <app-filter [allContacts]='contacts' [filterBy]="searchFor"></app-filter>
+  </section>
+  
+</div>

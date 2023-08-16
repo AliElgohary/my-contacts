@@ -1,0 +1,6 @@
+
+<h2 *ngIf="filterBy">search result</h2>
+<div *ngFor="let contact of filteredContacts">
+    <span class="span">name: {{contact.name}}</span>
+    <span class="span">number: {{contact.phoneNumber}}</span>
+</div>

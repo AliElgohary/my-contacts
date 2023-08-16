@@ -1,15 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module'; // Import the HomeModule
+import { MyContactsComponent } from './components/my-contacts/my-contacts.component';
+import { FormsModule } from '@angular/forms';
+import { FilterComponent } from './components/filter/filter.component';
+
+
+
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HomeModule, FormsModule], // Include HomeModule here
+  declarations: [
+    AppComponent,
+    MyContactsComponent,
+    FilterComponent,
+    
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+.wrap {
+    text-align: center;
+  
+    .left,
+    .right {
+      display: inline-block;
+      padding: 1%;
+    }
+  }
